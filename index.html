@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar AI Agent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Calendar AI Agent</h1>
+            <div class="status-indicator">
+                <span class="status-dot active"></span>
+                <span>Agent Active</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="calendar-section">
+                <h2>Connected Calendars</h2>
+                <div id="calendars-list" class="calendars-container">
+                    <div class="loading">Loading calendars...</div>
+                </div>
+                <button id="add-calendar-btn" class="primary-btn">Add Calendar</button>
+            </section>
+
+            <section class="prompt-section">
+                <h2>Send Instructions to AI Agent</h2>
+                <div class="prompt-container">
+                    <textarea id="prompt-input" placeholder="Enter your instructions for the AI agent, e.g., 'Move my meeting with John to Friday at 2pm' or 'Schedule a team lunch next Tuesday at noon'"></textarea>
+                    <div class="prompt-actions">
+                        <button id="send-prompt-btn" class="primary-btn">Send</button>
+                        <div id="voice-input-container"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="response-section">
+                <h2>Agent Response</h2>
+                <div id="response-container" class="response-container">
+                    <p class="empty-state">Agent responses will appear here</p>
+                </div>
+            </section>
+
+            <section class="activity-section">
+                <h2>Recent Activity</h2>
+                <div id="activity-log" class="activity-container">
+                    <p class="empty-state">No recent activity</p>
+                </div>
+            </section>
+        </main>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Connect Calendar</h2>
+                <div class="calendar-providers">
+                    <button class="provider-btn" data-provider="google">
+                        <img src="assets/google-calendar.png" alt="Google Calendar">
+                        <span>Google Calendar</span>
+                    </button>
+                    <button class="provider-btn" data-provider="microsoft">
+                        <img src="assets/microsoft-calendar.png" alt="Microsoft Calendar">
+                        <span>Microsoft Calendar</span>
+                    </button>
+                    <button class="provider-btn" data-provider="apple">
+                        <img src="assets/apple-calendar.png" alt="Apple Calendar">
+                        <span>Apple Calendar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
